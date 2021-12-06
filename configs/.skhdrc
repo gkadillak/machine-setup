@@ -1,8 +1,8 @@
 # windows
 ctrl + cmd + alt - m : yabai -m window --toggle zoom-fullscreen
 ctrl + cmd + alt - j   : yabai -m window --toggle float; yabai -m window --grid 1:2:0:0:1:1
-ctrl + cmd + alt - l : ~/fun/machine-setup/configs/moveWindowLeftAndFollowFocus.sh
-ctrl + cmd + alt - r : ~/fun/machine-setup/configs/moveWindowRightAndFocus.sh
+ctrl + cmd + alt - l : ~/fun/machine-setup/configs/scripts/moveWindowLeftAndFollowFocus.sh
+ctrl + cmd + alt - r : ~/fun/machine-setup/configs/scripts/moveWindowRightAndFocus.sh
 
 
 # work + play
