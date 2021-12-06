@@ -1,0 +1,41 @@
+- name: Install yabai (window manager)
+  community.general.homebrew:
+    name: koekeishiya/formulae/yabai
+  tags:
+  - window-manager
+- name: Install hotkey daemon
+  community.general.homebrew:
+    name: koekeishiya/formulae/skhd
+  tags:
+  - window-manager
+- name: Install json processor
+  community.general.homebrew:
+    name: jq
+  tags:
+  - window-manager
+- name: Symlink yabai config
+  ansible.builtin.file:
+    src: "{{ config_directory }}.skhdrc"
+    dest: '{{ ansible_env.HOME }}/.yabairc'
+    state: link
+    force: yes
+    mode: u+x
+  tags:
+  - window-manager
+- name: Copy skhd config
+  ansible.builtin.file:
+    src: "{{ config_directory }}.skhdrc"
+    dest: '{{ ansible_env.HOME }}/.skhdrc'
+    state: link
+    force: yes
+    mode: u+x
+  tags:
+  - window-manager
+- name: Start yabai process
+  ansible.builtin.shell: brew services start yabai
+  tags:
+  - window-manager
+- name: Start skhd process
+  ansible.builtin.shell: brew services start skhd
+  tags:
+  - window-manager

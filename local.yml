@@ -1,0 +1,22 @@
+- hosts: localhost
+  vars:
+    is_osx_machine: "{{ ansible_facts['os_family'] == 'Darwin' }}"
+    is_debian_machine: "{{ ansible_facts['os_family'] == 'Debian' }}"
+  pre_tasks:
+    - name: Update cache
+      apt:
+        update_cache: true
+      when: is_debian_machine
+      tags:
+      - node
+      - zsh
+  tasks:
+  - include: ./zsh.yml
+  - include: ./node-debian.yml
+    when: is_debian_machine
+  - include: ./node-darwin.yml
+    when: is_osx_machine
+  - include: ./window-manager.yml
+    when: is_osx_machine
+    vars:
+      config_directory: "~/fun/machine-setup/configs/"

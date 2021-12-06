@@ -1,0 +1,15 @@
+# windows
+ctrl + cmd + alt - m : yabai -m window --toggle zoom-fullscreen
+ctrl + cmd + alt - j   : yabai -m window --toggle float; yabai -m window --grid 1:2:0:0:1:1
+ctrl + cmd + alt - l : ~/fun/machine-setup/configs/moveWindowLeftAndFollowFocus.sh
+ctrl + cmd + alt - r : ~/fun/machine-setup/configs/moveWindowRightAndFocus.sh
+
+
+# work + play
+ctrl + alt - l : code ~/lyra/lyrahealthwebapp
+ctrl + alt - u : code ~/lyra/ui-core
+
+# development
+## start development mode
+ctrl + shift - d: brew services stop skhd && skhd -c ~/.skhdrc
+ctrl + shift - r : echo "restarted"

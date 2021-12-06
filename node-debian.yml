@@ -1,0 +1,15 @@
+- name: Install node for Debian machines
+  apt:
+    name: ['nodejs', 'npm']
+  tags:
+  - node
+- name: Install n
+  community.general.npm:
+    name: n
+    global: yes
+  tags:
+  - node
+- name: n 14
+  shell: n 14
+  tags:
+  - node

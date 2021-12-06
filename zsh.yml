@@ -1,0 +1,36 @@
+- name: Install zsh for Debian
+  apt: name=zsh
+  when: is_debian_machine
+  tags:
+  - zsh
+- name: Install zsh for osx
+  community.general.homebrew:
+    name: zsh
+  tags:
+  - zsh
+- name: Change shell
+  shell: chsh -s `which zsh`
+  ignore_errors: true
+  tags:
+  - zsh
+- name: Install ohmyzsh
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  ignore_errors: true
+  tags:
+  - zsh
+- name: Install the zsh plugin autosuggestions
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: '~/.oh-my-zsh/plugins/zsh-autosuggestions'
+  tags:
+  - zsh
+- name: Update our zshrc for Debian
+  shell: sed -i 's/(git/(git zsh-autosuggestions/' ~/.zshrc
+  when: is_debian_machine
+  tags:
+  - zsh
+- name: Update our zshrc for osx
+  shell: sed -i '' 's/(git/(git zsh-autosuggestions/' ~/.zshrc
+  when: is_osx_machine
+  tags:
+  - zsh
