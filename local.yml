@@ -11,6 +11,8 @@
       - node
       - zsh
   tasks:
+  - include: ./install-brew-packages.yml
+    when: is_osx_machine
   - include: ./zsh.yml
   - include: ./node-debian.yml
     when: is_debian_machine

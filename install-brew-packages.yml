@@ -1,0 +1,11 @@
+- name: Check that brew dependencies are up to date
+  ansible.builtin.shell: brew bundle check
+  ignore_errors: true
+  register: bundle_check_output
+  tags:
+  - brew-packages
+- name: Install brew packages from brewfile
+  ansible.builtin.shell: brew bundle install
+  when: bundle_check_output.rc == 1
+  tags:
+  - brew-packages

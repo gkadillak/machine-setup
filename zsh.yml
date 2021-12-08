@@ -3,11 +3,6 @@
   when: is_debian_machine
   tags:
   - zsh
-- name: Install zsh for osx
-  community.general.homebrew:
-    name: zsh
-  tags:
-  - zsh
 - name: Change shell
   shell: chsh -s `which zsh`
   ignore_errors: true
