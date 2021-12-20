@@ -1,6 +1,6 @@
 - name: Symlink yabai config
   ansible.builtin.file:
-    src: "{{ config_directory }}.skhdrc"
+    src: "{{ config_directory }}.yabairc"
     dest: '{{ ansible_env.HOME }}/.yabairc'
     state: link
     force: yes
