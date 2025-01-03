@@ -1,0 +1,90 @@
+{
+  "bookmark_lists": [
+    {
+      "bookmarks": [
+        {
+          "content": "export const useTrackScreen = (): (() => void) => {",
+          "created_at": 1733941049,
+          "githash": "3d6d61f1c4",
+          "id": 1733941049,
+          "location": {
+            "col": 14,
+            "line": 91,
+            "path": "/Users/gkadillak/lyra/ui-monorepo/apps/Lyraweb-mobile/src/hooks/useTrackScreen.ts",
+            "project_name": "Lyraweb-mobile",
+            "relative_path": "src/hooks/useTrackScreen.ts"
+          },
+          "name": "view screen mixpanel events for mobile",
+          "visited_at": 1733941139
+        },
+        {
+          "content": "export const useDefaultMixpanelEntryPoint = (defaultEntryPoint?: string) => {",
+          "created_at": 1733939858,
+          "githash": "3d6d61f1c4",
+          "id": 1733939858,
+          "location": {
+            "col": 13,
+            "line": 20,
+            "path": "/Users/gkadillak/lyra/ui-monorepo/apps/lyrahealthwebapp/src/common/hooks/useDefaultMixpanelEntryPoint.ts",
+            "project_name": "lyrahealthwebapp",
+            "relative_path": "src/common/hooks/useDefaultMixpanelEntryPoint.ts"
+          },
+          "name": "mixpanel entry point for web",
+          "visited_at": 1733941309
+        },
+        {
+          "content": "import { StyleSheet, TextStyle } from 'react-native'",
+          "created_at": 1734042035,
+          "githash": "6bfe01623c",
+          "id": 1734042035,
+          "location": {
+            "col": 13,
+            "line": 1,
+            "path": "/Users/gkadillak/lyra/ui-monorepo/libs/ui-core-crossplatform/src/styles/typeStyles.ts",
+            "project_name": "ui-core-crossplatform",
+            "relative_path": "src/styles/typeStyles.ts"
+          },
+          "name": "crossplatform text styles",
+          "visited_at": 1734042035
+        },
+        {
+          "content": "export const spacing = Object.freeze({",
+          "created_at": 1734041249,
+          "githash": "6bfe01623c",
+          "id": 1734041249,
+          "listname": "Default",
+          "location": {
+            "col": 1,
+            "line": 1,
+            "path": "/Users/gkadillak/lyra/ui-monorepo/libs/shared-app-logic/src/features/common/constants/theme/spacing.ts",
+            "project_name": "shared-app-logic",
+            "relative_path": "src/features/common/constants/theme/spacing.ts"
+          },
+          "name": "theme spacing",
+          "visited_at": 1734370625
+        }
+      ],
+      "id": "2024121110573850791326",
+      "is_active": true,
+      "name": "Default"
+    }
+  ],
+  "projects": [
+    {
+      "name": "lyrahealthwebapp",
+      "path": "/Users/gkadillak/lyra/ui-monorepo/apps/lyrahealthwebapp"
+    },
+    {
+      "name": "Lyraweb-mobile",
+      "path": "/Users/gkadillak/lyra/ui-monorepo/apps/Lyraweb-mobile"
+    },
+    {
+      "name": "shared-app-logic",
+      "path": "/Users/gkadillak/lyra/ui-monorepo/libs/shared-app-logic"
+    },
+    {
+      "name": "ui-core-crossplatform",
+      "path": "/Users/gkadillak/lyra/ui-monorepo/libs/ui-core-crossplatform"
+    }
+  ]
+}
