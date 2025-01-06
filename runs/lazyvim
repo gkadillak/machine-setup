@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [ ! -f ~/.config/nvim.bak ]; then
+  mv ~/.config/nvim{,.bak}
+fi
+
+if [ ! -f ~/.local/share/nvim.bak ]; then
+  mv ~/.local/share/nvim{,.bak}
+fi
+
+if [ ! -f ~/.local/state/nvim.bak ]; then
+  mv ~/.local/state/nvim{,.bak}
+fi
+
+if [ ! -f ~/.cache/nvim.bak ]; then
+  mv ~/.cache/nvim{,.bak}
+fi
+
+git clone git@github.com:gkadillak/machine-setup.git ~/.config/nvim

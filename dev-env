@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+scripts_dir=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+filter="$1"
+
+dry="0"
+
+while [[ $# > 0 ]]; do
+  if [[ $1 == "--dry" ]]; then
+    dry="1"
+  else
+    filter="$1"
+  fi
+  shift
+done
+
+log() {
+  if [[ $dry == "1" ]]; then
+    echo "[DRY_RUN]: $@"
+  else
+    echo "$@"
+  fi
+}
+
+execute() {
+  log "execute $@"
+  if [[ $dry == "1" ]]; then
+    return
+  fi
+  "$@"
+}
+
+log "$scripts_dir -- $filter"
+
+copy_dir() {
+  from=$1
+  to=$2
+
+  pushd $from >/dev/null
+  dirs=$(find . -mindepth 1 -maxdepth 1 -type d)
+  for dir in $dirs; do
+    execute trash $to/$dir
+    if [[ ! -d $to/$dir ]]; then
+      mkdir -p $to
+    fi
+    execute cp -r $dir $to/$dir
+  done
+  popd >/dev/null
+}
+
+copy_file() {
+  from=$1
+  to=$2
+  name=$(basename $from)
+
+  execute trash $to/$name
+  execute cp $from $to/$name
+}
+
+copy_dir .local-dev $HOME/.local-dev
+copy_file ~/projects/dev-env/.config/tmux/.tmux.conf $HOME
+copy_file ~/projects/dev-env/zshrc/.zshrc $HOME
+
+log "---------------- dev-env ----------------"
