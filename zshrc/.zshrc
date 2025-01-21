@@ -125,6 +125,10 @@ keys() {
   echo "CTRL-S: tmux navigate to session by name"
 }
 
+killtmux() {
+  tmux kill-server
+}
+
 # export PATH="$PATH:/Users/gkadillak/Library/Python/3.9/bin"
 
 # Set up fzf key bindings and fuzzy completion
